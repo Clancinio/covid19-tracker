@@ -1,4 +1,4 @@
-package com.example.covid19tracker.ui.dashboard;
+package com.example.covid19tracker.ui.country;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
