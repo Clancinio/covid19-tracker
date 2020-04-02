@@ -23,6 +23,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.lang.ref.ReferenceQueue;
+import java.text.DecimalFormat;
 
 public class HomeFragment extends Fragment {
 
@@ -38,7 +39,7 @@ public class HomeFragment extends Fragment {
         tvTotalConfirmed = root.findViewById(R.id.tvTotalConfirmed);
         tvTotalDeaths = root.findViewById(R.id.tvTotalDeaths);
         tvTotalRecovered = root.findViewById(R.id.tvTotalRecovered);
-        progressBar = root.findViewById(R.id.progress_circular_home);
+        //progressBar = root.findViewById(R.id.progress_circular_home);
 
         // Call getData method
         getData();
@@ -52,8 +53,9 @@ public class HomeFragment extends Fragment {
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                progressBar.setVisibility(View.GONE);
+                //progressBar.setVisibility(View.GONE);
 
+                DecimalFormat formatter = new DecimalFormat("#,###,###");
                 try {
                     JSONObject jsonObject = new JSONObject(response.toString());
                     tvTotalConfirmed.setText(jsonObject.getString("cases"));
@@ -67,7 +69,7 @@ public class HomeFragment extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                progressBar.setVisibility(View.GONE);
+                //progressBar.setVisibility(View.GONE);
                 Log.d("Error Response", error.toString());
             }
     });

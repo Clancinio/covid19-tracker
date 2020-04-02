@@ -26,6 +26,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorTotalConfirmed"
             android:textSize="20sp"
+            android:width="100dp"
             tools:text="1254" />
 
         <TextView
